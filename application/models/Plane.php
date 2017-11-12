@@ -46,4 +46,85 @@ class Plane extends CI_Model
         $this->$key = $value;
         return $this;
     }
+    
+    public function setId($value)
+    {
+        if (preg_match('/^[A-Z0-9_]+$/i', $value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setManufacturer($value)
+    {
+        if (preg_match('/^[A-Z]+$/i', $value) && strlen($value) <= 64) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setModel($value)
+    {
+        if (preg_match('/^[A-Z ]+$/i', $value) && strlen($value) <= 64) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setPrice($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setSeats($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setReach($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setCruise($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setTakeoff($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
+    
+    public function setHourly($value)
+    {
+        if (is_int($value)) {
+            $this->task = $value;
+            return true;
+        }
+        return false;
+    }
 }

@@ -13,7 +13,7 @@
             {flights}
             <tr title="Plane: {Plane ID}
                 Depart: {Departure time} Arrive: {Arrival time}">
-                <td>{id}</td>
+                <td><a href="fleet/show/{PlaneID}">{id}</a></td>
                 <td>{DepartureAirport}</td>
                 <td>{ArrivalAirport}</td>
             </tr>
