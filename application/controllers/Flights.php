@@ -25,7 +25,6 @@ class Flights extends Application
 	{
             $role = $this->session->userdata('userrole');
             $this->data['pagetitle'] = 'Viewing as ('. $role . ')';
-            $this->page();
             
             // this is the view we want shown
             $this->data['pagebody'] = 'flights';
@@ -93,8 +92,8 @@ class Flights extends Application
                 'farrivalairport'  => form_label('Arrival Airport') . form_dropdown('ArrivalAirport', $this->wacky->airportNames()),
                 'fdeparteairport'  => form_label('Departure Airport') . form_dropdown('DepartureAirport', $this->wacky->airportNames()),
                 'fplaneid'  => form_label('Plane ID') . form_dropdown('PlaneID', $this->fleet_model->planeIds()),
-                'fdeparturetime'  => form_label('Departure Time') . form_input('DepartureTime', $flight->DepartureTime),
-                'farrivaltime'  => form_label('Arrival Time') . form_input('ArrivalTime', $flight->ArrivalTime),
+                'fdeparturetime'  => form_label('Departure Time (24-hour clock format: HH:MM)') . form_input('DepartureTime', $flight->DepartureTime),
+                'farrivaltime'  => form_label('Arrival Time (24-hour clock format: HH:MM)') . form_input('ArrivalTime', $flight->ArrivalTime),
                 'zsubmit'    => form_submit('submit', $submitButtonLabel),
             );
             $this->data = array_merge($this->data, $fields);
@@ -161,4 +160,32 @@ class Flights extends Application
             redirect('/flights');
         }
         
+        
+        public function arrivalTime_Check($str)
+        {
+                if (preg_match("/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/i", $str))
+                {
+                        
+                        return TRUE;
+                }
+                else
+                {
+                        $this->form_validation->set_message('arrivalTime_Check', 'The {field} field must be in the format: HH:MM');
+                        return FALSE;
+                }
+        }
+        
+        public function departureTime_Check($str)
+        {
+                if (preg_match("/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/i", $str))
+                {
+                        
+                        return TRUE;
+                }
+                else
+                {
+                        $this->form_validation->set_message('departureTime_Check', 'The {field} field must be in the format: HH:MM');
+                        return FALSE;
+                }
+        }
 }

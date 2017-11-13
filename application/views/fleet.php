@@ -4,7 +4,7 @@
     <table>        
         <thead>
             <tr>
-               <th>Fleet ID</th>
+               <th>Plane ID</th>
                <th>Model </th>
             </tr>
         </thead>        
@@ -18,6 +18,5 @@
         </tbody>
     </table>
 </div>
-<br/>
 <br/>
 {add}
