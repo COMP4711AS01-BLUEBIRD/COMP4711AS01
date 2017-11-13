@@ -21,6 +21,3 @@
         </tbody>
     </table>
 </div>
-<br/>
-<br/>
-{add}

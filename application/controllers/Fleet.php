@@ -120,14 +120,14 @@ class Fleet extends Application
 
             $fields = array(
                 'hid'  => form_hidden('id', $flight->id),
-                'fmanufacturer'  => form_label('Manufacturer') . form_dropdown('Manufacturer', $this->wacky->manufacturers(), $flight->Manufacturer),
-                'fmodel'  => form_label('Model') . form_dropdown('Model', $this->wacky->models(), $flight->Model),
-                'fprice'  => form_label('Price') . form_input('Price', $flight->Price),
-                'fseats'  => form_label('Seats') . form_input('Seats', $flight->Seats),
-                'freach'  => form_label('Reach') . form_input('Reach', $flight->Reach),
-                'fcruise'  => form_label('Cruise') . form_input('Cruise', $flight->Cruise),
-                'ftakeoff'  => form_label('Takeoff') . form_input('Takeoff', $flight->Takeoff),
-                'fhourly'  => form_label('Hourly') . form_input('Hourly', $flight->Hourly),                
+                'fmanufacturer'  => form_label('Manufacturer') . form_dropdown('manufacturer', $this->wacky->manufacturers(), $flight->Manufacturer),
+                'fmodel'  => form_label('Model') . form_dropdown('model', $this->wacky->models(), $flight->Model),
+                'fprice'  => form_label('Price') . form_input('price', $flight->Price),
+                'fseats'  => form_label('Seats') . form_input('seats', $flight->Seats),
+                'freach'  => form_label('Reach') . form_input('reach', $flight->Reach),
+                'fcruise'  => form_label('Cruise') . form_input('cruise', $flight->Cruise),
+                'ftakeoff'  => form_label('Takeoff') . form_input('takeoff', $flight->Takeoff),
+                'fhourly'  => form_label('Hourly') . form_input('hourly', $flight->Hourly),                
                 'zsubmit'    => form_submit('submit', $submitButtonLabel),
             );
             $this->data = array_merge($this->data, $fields);
@@ -165,13 +165,13 @@ class Fleet extends Application
                 {
                     $this->fleet_model->update($flight);
                     $this->alert('Flight ' . $flight->id . ' updated', 'success');
-                }
-
-                $this->showit();
+                }  
             }else
             {
                 $this->alert('<strong>Validation errors!<strong><br>' . validation_errors(), 'danger');
             }
+            
+            $this->showit();
         }
         
         // build a suitable error mesage

@@ -1,4 +1,4 @@
-<h1>Fleet ID: {id}</h1>
+<h1>Plane ID: {id}</h1>
 <br />
 <br />
 <br />
@@ -17,6 +17,6 @@
     <br/>
     {zsubmit}
     <a href="/fleet/cancel"><input type="button" value="Cancel the current edit"/></a>
-    <a href="/fleet/delete"><input type="button" value="Delete this flight"/></a>  
+    <a href="/fleet/delete"><input type="button" value="Delete this Plane"/></a>  
 </form>
     {error}

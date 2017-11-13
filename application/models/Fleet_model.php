@@ -35,8 +35,12 @@ class Fleet_Model extends CSV_Model
     public function rules()
     {
         $config = array(
-        ['field' => 'Manufacturer', 'label' => 'Manufacturer', 'rules' => 'required'],
-        ['field' => 'Model', 'label' => 'Model', 'rules' => 'required'],
+        ['field' => 'price', 'label' => 'Price', 'rules' => 'required|numeric'],
+        ['field' => 'seats', 'label' => 'Seats', 'rules' => 'required|numeric'],
+        ['field' => 'reach', 'label' => 'Reach', 'rules' => 'required|numeric'],
+        ['field' => 'cruise', 'label' => 'Cruise', 'rules' => 'required|numeric'],
+        ['field' => 'takeoff', 'label' => 'Takeoff', 'rules' => 'required|numeric'],
+        ['field' => 'hourly', 'label' => 'Hourly', 'rules' => 'required|numeric'],
         );
         return $config;
     }
