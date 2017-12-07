@@ -13,35 +13,35 @@
             </tr>
             <tr>
                 <td>manufacturer</td>
-                <td>{Manufacturer}</td>
+                <td>{manufacturer}</td>
             </tr>
             <tr>
                 <td>model</td>
-                <td>{Model}</td>
+                <td>{model}</td>
             </tr>
             <tr>
                 <td>price</td>
-                <td>{Price}</td>
+                <td>{price}</td>
             </tr>
             <tr>
                 <td>seats</td>
-                <td>{Seats}</td>
+                <td>{seats}</td>
             </tr>
             <tr>
                 <td>reach</td>
-                <td>{Reach}</td>
+                <td>{reach}</td>
             </tr>
             <tr>
                 <td>cruise</td>
-                <td>{Cruise}</td>
+                <td>{cruise}</td>
             </tr>
             <tr>
                 <td>takeoff</td>
-                <td>{Takeoff}</td>
+                <td>{takeoff}</td>
             </tr>
             <tr>
                 <td>hourly</td>
-                <td>{Hourly}</td>
+                <td>{hourly}</td>
             </tr>
         </tbody>
     </table>
